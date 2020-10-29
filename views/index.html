@@ -3,10 +3,12 @@
     <head>
         <title>BlairsBurgerWebsite</title>
         <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="css\style.css">
     </head>
     <body>
         <h1>Blairs burger</h1>
         <main>
+            <section id="burgersinfo">
             <h2>Select your burger</h2>
             <table>
                 <thead>
@@ -24,27 +26,29 @@
                     </tr>
                     <tr>
                         <td><ul>
-                                <li>Not suitable for vegetarians</li>
-                                <li>Contains lactose</li>
-                                <li>Contains sesame seeds</li>
+                                <li>Not suitable for <span class="preferences">vegetarians</span></li>
+                                <li>Contains <span class="allergies">lactose</span></li>
+                                <li>Contains <span class="allergies">sesame seeds</span></li>
                             </ul></td>
                         <td><ul>
-                            <li>Not suitable for vegans</li>
-                            <li>Conatains tomato</li>
-                            <li>Contains gluten</li>
+                            <li>Not suitable for <span class="preferences">vegans</li>
+                            <li>Contains <span class="allergies">tomato</span></li>
+                            <li>Contains <span class="allergies">gluten</span></li>
                         </ul>
                         <td><ul>
-                            <li>Not suitable for vegetarians</li>
-                            <li>Gluten-free</li>
-                            <li>Lactose-free</li>
+                            <li>Not suitable for <span class="preferences">pregnant women</li>
+                            <li>Contains <span class="allergies">salt</span></li>
+                            <li>Contains <span class="allergies">pepper</span></li>
                         </ul></td>
                         </td>
                     </tr>
                 </tbody>
             </table>
+            </section>
             <h3>Customer information</h3>
+
             <h5>Please enter your personal information below</h5>
-            <section id ="Contact">
+            <section id ="contact">
                 <form>
                     <p>
                         <label for= "firstname">Full name</label><br>
@@ -72,6 +76,7 @@
                     </p>
                 </form>
             <h5>Please select yout gender:</h5>
+            </section>
             <section id="Gender">
                 <form>
                     <p>
@@ -89,8 +94,8 @@
                     <input type="submit" value="Send">
                 </form>
             </section>
-            </section>
             <br/>
+            </section>
             <button type="submit order"><img src="cart.jpeg" width = "40"> Place order!</button>
         </main>
     </body>
