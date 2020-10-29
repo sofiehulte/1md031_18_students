@@ -1,0 +1,27 @@
+@import url("reset.css");
+@import 'https://fonts.googleapis.com/css?family=Pacifico|Dosis';
+
+body {
+    font-family: arial;
+    font-size: 14pt;
+}
+
+.allergies {
+    font-weight: bolder;
+}
+#idname {
+    text-transform: uppercase;
+}
+
+#burgersinfo {
+    background-color: black;
+}
+
+#burgersinfo {
+    color: white;
+}
+
+button:hover {
+    color: green;
+    cursor: wait;
+}
