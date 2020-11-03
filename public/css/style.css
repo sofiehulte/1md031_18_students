@@ -4,6 +4,24 @@
 body {
     font-family: arial;
     font-size: 14pt;
+    margin: 10px 10px;
+}
+
+#header {
+    margin: 20px 20px;
+    height: 150px;
+    overflow: hidden;
+}
+
+#headline {
+    position: absolute;
+    padding: 5px 20px 5px
+}
+
+#flames {
+    opacity: 0.8;
+    height: auto;
+    width: 100%;
 }
 
 .allergies {
@@ -15,13 +33,62 @@ body {
 
 #burgersinfo {
     background-color:black;
+    margin: 10px 10px;
+    border: 7px dashed white;
 }
 
 #burgersinfo {
     color:white;
 }
 
+#contact {
+    border: 7px dashed black;
+    margin: 10px 10px;
+    padding: 8px 15px 10px;
+}
+
+button {
+    margin: 40px 40px
+}
+
 button:hover {
-    color: green;
+    background-color: green;
     cursor: wait;
 }
+
+table {
+    width:100%
+}
+
+#subheadline {
+    padding: 5px 20px 5px
+}
+
+.burgergrid {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 100px 100px 100px;
+    background-color: black;
+    color: white;
+}
+
+.box {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 14pt;
+}
+
+.a {
+    grid-column: 1 / 4;
+}
+
+.b {
+    grid-column: 6 / 7;
+}
+
+.c {
+    grid-column: 8 / 9;
+}
+

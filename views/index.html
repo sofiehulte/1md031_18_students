@@ -5,50 +5,53 @@
         <meta charset="utf-8"/>
         <link rel="stylesheet" type="text/css" href="css\style.css">
     </head>
+
     <body>
-        <h1>Blairs burger</h1>
+        <section id="header">
+        <h1 id="headline"> Blairs burger </h1>
+        <td><img id="flames" src="img/header.jpg" alt="header_flames" width = "400"></td>
+        </section>
+
         <main>
             <section id="burgersinfo">
-            <h2>Please select your burger</h2>
+            <h2 id="subheadline">Please select your burger</h2>
+
             <table>
-                <thead>
-                    <tr>
-                        <th>Basic burger</th>
-                        <th>Halloumi burger</th>
-                        <th>Chicken burger</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><img src="burger.jpeg" alt="basic_burger" width = "300"></td>
-                        <td><img src="halloumi.jpeg" alt="halloumi_burger" width="300"></td>
-                        <td><img src="chicken2.jpeg" alt="chicken_burger" width="300"></td>
-                    </tr>
-                    <tr>
-                        <td><ul>
-                                <li>Not suitable for <span class="preferences">vegetarians</span></li>
-                                <li>Contains <span class="allergies">lactose</span></li>
-                                <li>Contains <span class="allergies">sesame seeds</span></li>
-                            </ul></td>
-                        <td><ul>
+                <div class="burgergrid">
+                    
+                    <div class="box a"> <h2>Basic burger</h2>
+                    <img src="img/bacon.png" alt="basic_burger" width = "300">
+                        <ul>
+                            <li>Not suitable for <span class="preferences">vegetarians</span></li>
+                            <li>Contains <span class="allergies">lactose</span></li>
+                            <li>Contains <span class="allergies">sesame seeds</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="box b"> <h2>Halloumi burger</h2>
+                        <img src="img/halloumi.png" alt="halloumi_burger" width="300">
+                        <ul>
                             <li>Not suitable for <span class="preferences">vegans</li>
                             <li>Contains <span class="allergies">tomato</span></li>
                             <li>Contains <span class="allergies">gluten</span></li>
                         </ul>
-                        <td><ul>
+                    </div>
+
+                    <div class="box c"> <h2>Chicken burger</h2>
+                        <img src="img/chicken.png" alt="chicken_burger" width="400">
+                        <ul>
                             <li>Not suitable for <span class="preferences">pregnant women</li>
                             <li>Contains <span class="allergies">salt</span></li>
                             <li>Contains <span class="allergies">pepper</span></li>
-                        </ul></td>
-                        </td>
-                    </tr>
-                </tbody>
+                        </ul>
+                    </div>
+                </div>
             </table>
             </section>
-            <h3>Customer information</h3>
-
-            <h5>Please enter your personal information below</h5>
+            
             <section id ="contact">
+                <h3>Customer information</h3>
+                <h5>Please enter your personal information below</h5>
                 <form>
                     <p>
                         <label for= "firstname">Full name</label><br>
@@ -76,8 +79,6 @@
                     </p>
                 </form>
             <h5>Please select yout gender:</h5>
-            </section>
-            <section id="Gender">
                 <form>
                     <p>
                        <input type="radio" id="female" name="gender" value="female" checked="checked">
@@ -93,10 +94,15 @@
                     </p>
                     <input type="submit" value="Send">
                 </form>
-            </section>
             <br/>
             </section>
-            <button type="submit order"><img src="cart.jpeg" width = "40"> Place order!</button>
+            </section>
+            <button type="submit order"><img src="img/cart.jpeg" width = "40"> Place order!</button>
         </main>
+        <footer>
+            <hr> 
+            <br>
+            <p>Copyright Blairs best burgers inc</p>
+        </footer>
     </body>
 </html>
