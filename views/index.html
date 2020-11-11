@@ -4,6 +4,9 @@
         <title>BlairsBurgerWebsite</title>
         <meta charset="utf-8"/>
         <link rel="stylesheet" type="text/css" href="css\style.css">
+        <script src="js/js_script.js" defer></script>
+        <script src="https://vuejs.org/js/vue.js"></script>
+        <script src="js/vue_script.js"></script>
     </head>
 
     <body>
@@ -18,33 +21,6 @@
 
             <table>
                 <div class="burgergrid">
-                    
-                    <div class="box a"> <h2>Basic burger</h2>
-                    <img src="img/bacon.png" alt="basic_burger" width = "300">
-                        <ul>
-                            <li>Not suitable for <span class="preferences">vegetarians</span></li>
-                            <li>Contains <span class="allergies">lactose</span></li>
-                            <li>Contains <span class="allergies">sesame seeds</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="box b"> <h2>Halloumi burger</h2>
-                        <img src="img/halloumi.png" alt="halloumi_burger" width="300">
-                        <ul>
-                            <li>Not suitable for <span class="preferences">vegans</li>
-                            <li>Contains <span class="allergies">tomato</span></li>
-                            <li>Contains <span class="allergies">gluten</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="box c"> <h2>Chicken burger</h2>
-                        <img src="img/chicken.png" alt="chicken_burger" width="400">
-                        <ul>
-                            <li>Not suitable for <span class="preferences">pregnant women</li>
-                            <li>Contains <span class="allergies">salt</span></li>
-                            <li>Contains <span class="allergies">pepper</span></li>
-                        </ul>
-                    </div>
                 </div>
             </table>
             </section>
@@ -59,15 +35,15 @@
                     </p>
                     <p>
                         <label for="email">E-mail adress</label><br>
-                        <input type="text" id="email" name="email" placeholder="E-mail address"
+                        <input type="text" id="email" name="email" placeholder="E-mail address">
                     </p>
                     <p>
                         <label for="Street">Street</label><br>
-                        <input type="text" id="street" name="street" placeholder="Street name"
+                        <input type="text" id="street" name="street" placeholder="Street name">
                     </p>
                     <p>
                         <label for="house number">House number</label><br>
-                        <input type="number" id="house nummer" name="house number" placeholder="House number"
+                        <input type="number" id="house nummer" name="house number" placeholder="House number">
                     </p>
                     <p>
                         <label for="payment">Payment</label><br>
@@ -78,6 +54,7 @@
                         </select>
                     </p>
                 </form>
+
             <h5>Please select yout gender:</h5>
                 <form>
                     <p>
@@ -97,6 +74,7 @@
             <br/>
             </section>
             </section>
+            
             <button type="submit order"><img src="img/cart.jpeg" width = "40"> Place order!</button>
         </main>
         <footer>
