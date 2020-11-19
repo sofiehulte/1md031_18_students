@@ -1,86 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>BlairsBurgerWebsite</title>
-        <meta charset="utf-8"/>
-        <link rel="stylesheet" type="text/css" href="css\style.css">
-        <script src="js/js_script.js" defer></script>
-        <script src="https://vuejs.org/js/vue.js"></script>
-        <script src="js/vue_script.js"></script>
-    </head>
 
-    <body>
-        <section id="header">
+<head>
+    <title>BlairsBurgerWebsite</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/deli-very.css">
+    <script src="/socket.io/socket.io.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="css\style.css">
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script src="js/js_script.js" defer></script>
+    <script src="https://vuejs.org/js/vue.js"></script>
+    <script src="js/vue_script.js" defer></script>
+</head>
+
+<body>
+    <section id="header">
         <h1 id="headline"> Blairs burger </h1>
-        <td><img id="flames" src="img/header.jpg" alt="header_flames" width = "400"></td>
-        </section>
+        <td><img id="flames" src="img/header.jpg" alt="header_flames" width="400"></td>
+    </section>
 
-        <main>
-            <section id="burgersinfo">
+    <main id="main">
+        <section>
             <h2 id="subheadline">Please select your burger</h2>
 
-            <table>
-                <div class="burgergrid">
+            <div class="burgergrid" id="burgersinfo">
+                <div v-for="burger in menu"> 
+                    <h2> {{ burger.name}} </h2>
+                    <img v-bind:src=burger.img width="350px">
+                    <li> {{ burger.KCAL }} kCal </li> 
+                    <li> {{ burger.lactose}}</li>
+                    <li> {{ burger.gluten }}</li>
+                    Add burger: <input type="checkbox" :id="burger.name"></input>
                 </div>
-            </table>
-            </section>
-            
-            <section id ="contact">
-                <h3>Customer information</h3>
-                <h5>Please enter your personal information below</h5>
-                <form>
-                    <p>
-                        <label for= "firstname">Full name</label><br>
-                        <input type="text" id="first name and last name" name="fn" required="required" placeholder="First and last name">
-                    </p>
-                    <p>
-                        <label for="email">E-mail adress</label><br>
-                        <input type="text" id="email" name="email" placeholder="E-mail address">
-                    </p>
-                    <p>
-                        <label for="Street">Street</label><br>
-                        <input type="text" id="street" name="street" placeholder="Street name">
-                    </p>
-                    <p>
-                        <label for="house number">House number</label><br>
-                        <input type="number" id="house nummer" name="house number" placeholder="House number">
-                    </p>
-                    <p>
-                        <label for="payment">Payment</label><br>
-                        <select id="recipient" name="rcp">
-                            <option>Debit card</option>
-                            <option>Swish</option>
-                            <option>Klarna</option>
-                        </select>
-                    </p>
-                </form>
+            </div>
 
-            <h5>Please select yout gender:</h5>
-                <form>
-                    <p>
-                       <input type="radio" id="female" name="gender" value="female" checked="checked">
-                       <label for="female">Female</label><br>
-                    </p>
-                    <p>
-                        <input type="radio" id="male" name="gender" value="male">
-                        <label for="male">Male</label><br>
-                    </p>
-                    <p>
-                        <input type="radio" id="other" name="gender" value="other">
-                        <label for="other">Other</label><br>
-                    </p>
-                    <input type="submit" value="Send">
-                </form>
-            <br/>
-            </section>
-            </section>
+        </section>
+
+        <section id="contact">
+            <h3>Customer information</h3>
+            <h5>Please enter your personal information below</h5>
+            <form>
+                <p>
+                    <label for="firstname">Full name</label><br>
+                    <input type="text" id="name" name="fn" required="required"
+                        placeholder="First and last name">
+                </p>
+                <p>
+                    <label for="email">E-mail adress</label><br>
+                    <input type="text" id="mail" name="email" placeholder="E-mail address">
+                </p>
+                <p>
+                    <label for="payment">Payment</label><br>
+                    <select id="recipient" name="rcp">
+                        <option>Debit card</option>
+                        <option>Swish</option>
+                        <option>Klarna</option>
+                    </select>
+                </p>
+            </form>
+
+            <h5>Please select your gender:</h5>
+            <form>
+                <p>
+                    <input type="radio" id="female" name="gender" value="female" checked="checked">
+                    <label for="female">Female</label><br>
+                </p>
+                <p>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label><br>
+                </p>
+                <p>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label><br>
+                </p>
+            </form>
+            <br />
+
             
-            <button type="submit order"><img src="img/cart.jpeg" width = "40"> Place order!</button>
-        </main>
-        <footer>
-            <hr> 
-            <br>
-            <p>Copyright Blairs best burgers inc</p>
-        </footer>
-    </body>
+        <h1> Click in the map! </h1>
+        <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>
+        <div class="view-box">
+        <div id="dots" v-on:click="displayOrder">
+            <div 
+                v-bind:style="{ left: details.x + 'px', top: details.y + 'px'}">
+                T
+            </div>
+        </div>
+        </div>
+        
+        </section>
+        </section>
+
+        <div id="button">
+            <button v-on:click="buttonClicked"><img src="img/cart.jpeg" width="40"> Place order!</button>
+        </div>
+
+        <div v-for="item in let">
+            <h2> {{ item }} </h2>
+        </div>    
+    </main>
+
+    <footer>
+        <hr>
+        <br>
+        <p>Copyright Blairs best burgers inc</p>
+
+    </footer>
+</body>
+
 </html>

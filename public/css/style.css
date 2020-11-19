@@ -2,9 +2,9 @@
 @import 'https://fonts.googleapis.com/css?family=Pacifico|Dosis';
 
 body {
-    font-family: arial;
-    font-size: 14pt;
-    margin: 10px 10px;
+    font-family: arial; 
+    font-size: 14pt; 
+    margin: 10px 10px; 
 }
 
 #header {
@@ -78,16 +78,16 @@ table {
     background-color: black;
     color: white;
     border-radius: 5px;
-    padding: 10px;
+    padding: 20px;
     font-size: 14pt;
 }
 
 .a {
-    grid-column: 1 / span 3;
+    grid-column: 1 / span 2;
 }
 
 .b {
-    grid-column: 6 / 7;
+    grid-column: 3 / span 2;
 }
 
 .c {
