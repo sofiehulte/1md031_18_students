@@ -22,15 +22,15 @@
     <!-- Print all burgers and burger ingredients -->
     <main id="main">
         <section>
-            <h2 id="subheadline">Please select your burger</h2>
+            <h2 id="subheadline">Please add burger to cart</h2>
 
             <div class="burgergrid" id="burgersinfo">
                 <div v-for="burger in menu"> 
                     <h2> {{ burger.name}} </h2>
                     <img v-bind:src=burger.img width="350px">
                     <li> {{ burger.KCAL }} kCal </li> 
-                    <li v-if="burger.lactose" id="lactoseAllergy"> Contains lactose</li>
-                    <li v-if="burger.gluten" id="glutenAllergy"> Contains gluten</li>
+                    <li v-if="burger.lactose"> Contains <b>lactose</b></li>
+                    <li v-if="burger.gluten"> Contains <b>gluten</b></li>
                     Add burger: <input type="checkbox" :id="burger.name"></input>
                 </div>
             </div>
@@ -65,15 +65,15 @@
             <h5>Please select your gender:</h5>
             <form>
                 <p>
-                    <input type="radio" id="female" name="gender" value="female" checked="checked">
+                    <input type="radio" id="female" name="gender" value="Female" checked="checked">
                     <label for="female">Female</label><br>
                 </p>
                 <p>
-                    <input type="radio" id="male" name="gender" value="male">
+                    <input type="radio" id="male" name="gender" value="Male">
                     <label for="male">Male</label><br>
                 </p>
                 <p>
-                    <input type="radio" id="other" name="gender" value="other">
+                    <input type="radio" id="other" name="gender" value="Other">
                     <label for="other">Other</label><br>
                 </p>
             </form>
@@ -82,7 +82,6 @@
         <!-- Map code -->
         <h3> Click in the map! </h3>
         <h4> Please select the destination of your order on the map below:</h4>
-        <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>
         <div class="view-box">
         <div id="dots" v-on:click="displayOrder">
             <div 
@@ -101,8 +100,16 @@
         </div>
 
         <!-- Print full order at the bottom of the page -->
-        <div v-for="item in let">
-            <p id="fullOrder">{{ item }} </p>
+        <h3>Order information - your order will show up!</h3>
+        <h4>Customer details</h4>
+        <b>Namn: </b>{{ let[0] }} <br>
+        <b>E-mail: </b>{{ let[1] }} <br>
+        <b>Payment: </b>{{ let[2] }} <br>
+        <b>Gender: </b>{{ let[3] }} <br>
+        <b>Deliver to: </b> x: {{this.details.x}}, y: {{this.details.y }}
+        <h4>Ordered items</h4>
+        <div v-for="item in let[4]">
+            <li id="fullOrder">{{ item }} </li>
         </div>    
     </main>
 
