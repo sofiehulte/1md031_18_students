@@ -28,8 +28,8 @@
                     <h2> {{ burger.name}} </h2>
                     <img v-bind:src=burger.img width="350px">
                     <li> {{ burger.KCAL }} kCal </li> 
-                    <li> {{ burger.lactose}}</li>
-                    <li> {{ burger.gluten }}</li>
+                    <li v-if="burger.lactose" id="lactoseAllergy"> Contains lactose</li>
+                    <li v-if="burger.gluten" id="glutenAllergy"> Contains gluten</li>
                     Add burger: <input type="checkbox" :id="burger.name"></input>
                 </div>
             </div>
