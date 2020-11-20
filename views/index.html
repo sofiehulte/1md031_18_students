@@ -19,6 +19,7 @@
         <td><img id="flames" src="img/header.jpg" alt="header_flames" width="400"></td>
     </section>
 
+    <!-- Print all burgers and burger ingredients -->
     <main id="main">
         <section>
             <h2 id="subheadline">Please select your burger</h2>
@@ -36,6 +37,7 @@
 
         </section>
 
+        <!-- Contact information to customer -->
         <section id="contact">
             <h3>Customer information</h3>
             <h5>Please enter your personal information below</h5>
@@ -59,6 +61,7 @@
                 </p>
             </form>
 
+            <!-- Gender selection -->
             <h5>Please select your gender:</h5>
             <form>
                 <p>
@@ -76,8 +79,9 @@
             </form>
             <br />
 
-            
-        <h1> Click in the map! </h1>
+        <!-- Map code -->
+        <h3> Click in the map! </h3>
+        <h4> Please select the destination of your order on the map below:</h4>
         <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>
         <div class="view-box">
         <div id="dots" v-on:click="displayOrder">
@@ -91,12 +95,14 @@
         </section>
         </section>
 
+        <!-- Button code -->
         <div id="button">
             <button v-on:click="buttonClicked"><img src="img/cart.jpeg" width="40"> Place order!</button>
         </div>
 
+        <!-- Print full order at the bottom of the page -->
         <div v-for="item in let">
-            <h2> {{ item }} </h2>
+            <p id="fullOrder">{{ item }} </p>
         </div>    
     </main>
 

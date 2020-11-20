@@ -2,7 +2,7 @@
 @import 'https://fonts.googleapis.com/css?family=Pacifico|Dosis';
 
 body {
-    font-family: arial; 
+    font-family: "times new roman"; 
     font-size: 14pt; 
     margin: 10px 10px; 
 }
@@ -17,6 +17,7 @@ body {
     position: absolute;
     padding: 5px 20px 5px;
     text-align: center;
+    font-size: 60px
 }
 
 #flames {
@@ -51,6 +52,11 @@ body {
     border: 7px dashed black;
     margin: 10px 10px;
     padding: 8px 15px 10px;
+}
+
+#fullOrder {
+    font-family: "Times New Roman"; 
+    font-size: 11pt;
 }
 
 button {
